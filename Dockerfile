@@ -29,7 +29,7 @@ RUN pip install cryptography shyaml passlib netaddr
 RUN pip install --upgrade setuptools wheel
 RUN pip install --upgrade pyyaml jinja2 pycrypto
 RUN pip install --upgrade pywinrm
-RUN pip install ansible==2.6.2
+RUN pip install ansible==2.7.10
 
 #Powerline Font
 RUN cd /root \
