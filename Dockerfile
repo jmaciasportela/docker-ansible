@@ -22,14 +22,15 @@ RUN sed -i 's/#PermitRootLogin yes/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN printf "ClientAliveInterval 15\\nClientAliveCountMax 8" >> /etc/ssh/sshd_config
 
 #Install Ansible
-RUN apt-get update && apt-get install -y software-properties-common build-essential python python-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev zlib1g-dev
+RUN apt-get update && apt-get install -y software-properties-common build-essential python python3-pip python-dev python3-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev zlib1g-dev
 RUN apt-get install -y python-setuptools python-dev libffi-dev libssl-dev git sshpass tree git vim jq zsh wget
-RUN easy_install pip
-RUN pip install cryptography shyaml passlib netaddr
-RUN pip install --upgrade setuptools wheel
-RUN pip install --upgrade pyyaml jinja2 pycrypto
-RUN pip install --upgrade pywinrm
-RUN pip install ansible==2.7.10
+RUN pip3 install --upgrade pip
+RUN pip3 install cryptography shyaml passlib netaddr
+RUN pip3 install --upgrade setuptools wheel
+RUN pip3 install --upgrade pyyaml jinja2 pycrypto
+RUN pip3 install --upgrade pywinrm
+RUN pip3 install ansible==2.9.6
+RUN ansible --version | grep "python version"
 
 #Powerline Font
 RUN cd /root \
