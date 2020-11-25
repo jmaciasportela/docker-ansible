@@ -1,4 +1,4 @@
-FROM phusion/baseimage:latest
+FROM phusion/baseimage:master
 MAINTAINER Jesus Macias Portela<jesus.maciasportela@telefonica.com>
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -29,7 +29,7 @@ RUN pip3 install cryptography shyaml passlib netaddr
 RUN pip3 install --upgrade setuptools wheel
 RUN pip3 install --upgrade pyyaml jinja2 pycrypto
 RUN pip3 install --upgrade pywinrm
-RUN pip3 install ansible==2.9.6
+RUN pip3 install ansible==2.9.15
 RUN ansible --version | grep "python version"
 
 #Powerline Font
